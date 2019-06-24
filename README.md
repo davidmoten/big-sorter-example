@@ -6,9 +6,9 @@ Demo maven project with [*big-sorter*](https://github.com/davidmoten/big-sorter)
 git clone https://github.com/davidmoten/big-sorter-example.git
 ```
 * open Eclipse
-* File - Import - Maven - Existing Maven Projects - Next - Browse - big-sorter-example - OK - Finish
-* Package Explorer - big-sorter-example - src/main/java - example
-* Right click on App.java and choose Run As - Java Application
+* **File** - **Import** - **Maven** - **Existing Maven Projects** - **Next** - **Browse** - open folder `big-sorter-example` - **OK** - **Finish**
+* **Package Explorer** - **big-sorter-example** - **src/main/java** - **example**
+* Right click on *App.java* and choose **Run As** - **Java Application**
 
 Output:
 ```
