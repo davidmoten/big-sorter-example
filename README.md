@@ -1,5 +1,5 @@
 # big-sorter-example
-Demo maven project with big-sorter dependency and sample csv sort
+Demo maven project with [*big-sorter*](https://github.com/davidmoten/big-sorter) dependency and sample csv sort
 
 ## Getting started
 ```bash
