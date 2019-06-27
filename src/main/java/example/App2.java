@@ -1,17 +1,21 @@
 package example;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Comparator;
 
 import com.github.davidmoten.bigsorter.LineDelimiter;
 import com.github.davidmoten.bigsorter.Reader;
 import com.github.davidmoten.bigsorter.Serializer;
 import com.github.davidmoten.bigsorter.Sorter;
+import com.github.davidmoten.bigsorter.Writer;
 
 public class App2 {
 
@@ -26,20 +30,29 @@ public class App2 {
                 .loggerStdOut() //
                 .sort();
 
-        // now count duplicates in output
+        File outputWithCounts = new File("target/data2.sorted.with.counts.txt");
+
+        // now count occurrences in output
         try (InputStream in = new BufferedInputStream(new FileInputStream(output));
-                Reader<String> r = serializer.createReader(in)) {
+                OutputStream out = new BufferedOutputStream(new FileOutputStream(outputWithCounts));
+                Reader<String> r = serializer.createReader(in);
+                Writer<String> w = serializer.createWriter(out)) {
             long dups = 0;
             String last = null;
             String string;
             while ((string = r.read()) != null) {
-                if (last != null && last.equals(string)) {
-                    dups++;
+                if (last != null) {
+                    if (!last.equals(string)) {
+                        w.write(dups + " " + last);
+                        dups = 0;
+                    }
                 }
+                dups++;
                 last = string;
             }
-            System.out.println("duplicateLines=" + dups);
+            w.write(dups + " " + last);
         }
+
     }
 
 }
