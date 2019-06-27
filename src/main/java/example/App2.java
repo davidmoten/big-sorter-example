@@ -52,6 +52,10 @@ public class App2 {
             }
             w.write(dups + " " + last);
         }
+        
+        for (File file: new File("target").listFiles()) {
+            System.out.println(file);
+        }
 
     }
 
