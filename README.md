@@ -1,5 +1,6 @@
 # big-sorter-example
-Demo maven project with [*big-sorter*](https://github.com/davidmoten/big-sorter) dependency and sample csv sort
+<a href="https://github.com/davidmoten/big-sorter-example/actions/workflows/ci.yml"><img src="https://github.com/davidmoten/big-sorter-example/actions/workflows/ci.yml/badge.svg"/></a><br/>
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/big-sorter-example/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.davidmoten/big-sorter-example)<br/>
 
 ## Getting started
 ```bash
